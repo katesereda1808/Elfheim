@@ -6,8 +6,8 @@
 }
 @font-face{
     font-family: Basically;
-    font-style: normal;
-    src: url("./fonts/Basically.rar") format("rar");
+    font-style: regular;
+    src: url("./fonts/BasicallyASansSerif-Regular.ttf") format("truetype");
 }
 *{
     margin: 0;
@@ -54,7 +54,7 @@ header a{
 }
 .header_navs nav{
     width: 360px;
-    display: flex;
+    /* display: flex; */
     /* justify-content: space-between; */
 }
 .header_navs .nav1{
@@ -85,6 +85,7 @@ button{
     font-family: 'Basically';
     font-size: 18px;
     font-weight: 400;
+    cursor: pointer;
 }
 .button{
     font-size: 18px;
@@ -238,7 +239,6 @@ footer a{
     display: flex;
     margin-left: 5.5vw;
     min-width: 30px;
-
 }
 .main__block3 .nav_link{
     color: #000000;
@@ -266,7 +266,6 @@ footer a{
 .main_page__gallery_img{
     height: 300px;
 }
-
 .project_card{
     overflow: hidden;
     position: relative;
@@ -317,16 +316,11 @@ footer a{
     color: #000000;
     z-index: 1;
 }
-
-
-
-.main__block4_content .column_img{
-    height: 700px;
-}
 .main__block4_content .emphasize{
     font-size: 24px;
+    margin: 30px 0 30px 0;
 }
-.main__block4_content .faded{
+.faded{
     opacity: 0.5;
 }
 
@@ -407,4 +401,27 @@ footer a{
 }
 .attach_file img{
     margin-right: 10px;
+}
+/* // для блоков, разделенных пополам */
+.halfs_block{
+    display: flex;
+}
+.img_half img{
+    /* width: 100%; */
+    height: 700px;
+}
+.text_half{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+@media (max-width:900px) {
+    .header_navs .nav1, .header_navs .nav2{
+        display: none;
+    }
 }
