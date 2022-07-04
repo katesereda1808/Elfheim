@@ -82,6 +82,12 @@ footer{
     /* position: absolute;
     bottom: 0; */
 }
+footer .column3{
+    width: 20%;
+}
+footer li{
+    margin-bottom: 32px;
+}
 li{
     list-style: none;
     font-family: 'Basically';
@@ -111,7 +117,7 @@ button{
     color: #FAF9F7;
     background-color: #000000;
 }
-footer a{
+footer a, footer p{
     color: #FFFFFF;
     font-size: 16px;
     font-weight: 600;
@@ -490,6 +496,28 @@ footer a{
     .main__block2_content, .halfs_block, .main__block6_content, .footer__navs, .footer__navs .left_columns{
         flex-direction: column;
     }
+
+
+    .wood_1{
+   
+        top: 44%;
+        right: 18%;
+        /* z-index: 2; */
+    }
+    .wood_2{
+
+        top: 37%;
+        right: 5%;
+        /* z-index: 1; */
+    }
+    .wood_3{
+     
+        top: 10%;
+        left: 10%;
+        /* z-index: 0; */
+    }
+
+
     .main__block4_content .halfs_block{
         flex-direction: column-reverse;
     }
@@ -567,5 +595,17 @@ footer a{
     .main__block6{
         padding-top: 54px;
         padding-bottom: 54px;
+    }
+    footer{
+        padding: 48px 10px 48px 10px;
+    }
+    footer .column1, footer .column2{
+        margin-bottom: 100px;
+    }
+    footer .column1, footer .column2, footer .column3{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
     }
 }
