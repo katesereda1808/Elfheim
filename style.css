@@ -20,6 +20,9 @@ body{
     font-weight: 400;
     overflow-x: hidden;
 }
+.mobile{
+    display: none;
+}
 header{
     background-color: transparent;
     padding-top: 30px;
@@ -165,6 +168,8 @@ footer a{
 /* //block2 */
 .main__block2{
     background-color: #FAF9F7;
+    /* padding-left: 16px;
+    padding-right: 16px; */
 }
 .main__block2 .block_heading, .main__block4 .block_heading{
     margin-bottom: 30px;
@@ -194,8 +199,12 @@ footer a{
     margin-bottom: 50px;
 }
 /* //// */
-.main__block2_content .column_right{
+/* .main__block2_content .column_right{
     position: relative;
+} */
+.main__block2_woods{
+    position: relative;
+    height: 700px;
 }
 .main__block2_content .wood{
     position: absolute;
@@ -204,13 +213,13 @@ footer a{
 .wood_1{
     height: 220px;
     top: 44%;
-    right: 45%;
+    right: 35%;
     z-index: 2;
 }
 .wood_2{
     height: 133px;
     top: 37%;
-    right: 40%;
+    right: 25%;
     z-index: 1;
 }
 .wood_3{
@@ -316,6 +325,9 @@ footer a{
     color: #000000;
     z-index: 1;
 }
+.main__block4, .main__block5, .main__block6{
+    background-color: #FAF9F7;
+}
 .main__block4_content .emphasize{
     font-size: 24px;
     margin: 30px 0 30px 0;
@@ -327,7 +339,7 @@ footer a{
 .main__block5{
     padding-bottom: 50px;
 }
-.block5__gallery{
+.main__block5_gallery{
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -337,15 +349,15 @@ footer a{
     width: 196px;
     height: 345px;
 }
-.block5__gallery .card_2{
+.main__block5_gallery .card_2{
  width: 507px;
  height: 390px;
 }
-.block5__gallery .card_3{
+.main__block5_gallery .card_3{
     width: 196px;
     height: 401px;
 }
-.block5__gallery .card_4{
+.main__block5_gallery .card_4{
     width: 155px;
     height: 325px;
 }
@@ -355,7 +367,12 @@ footer a{
 }
 .main__block6_content{
     display: flex;
+    justify-content: center;
+    /* width: 100%; */
 }
+/* .main__block6_content .halfs_block{
+    width: 100%;
+} */
 .main__block6_content .block_heading{
     margin-bottom: 30px;
 }
@@ -366,7 +383,7 @@ footer a{
     align-items: center;
     justify-content: center;
 }
-.form_row{
+.name_phone{
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -386,7 +403,7 @@ footer a{
     font-size: 18px;
     font-weight: 400;
 }
-.main__block6 form input[name=name], .main__block6 form input[name=phone]{
+.name_phone input{
     width: 45%;
 }
 .main__block6 form button{
@@ -407,8 +424,8 @@ footer a{
     display: flex;
 }
 .img_half img{
-    /* width: 100%; */
-    height: 700px;
+    width: 100%;
+    /* height: 700px; */
 }
 .text_half{
     text-align: center;
@@ -421,7 +438,94 @@ footer a{
 
 
 @media (max-width:900px) {
+    .mobile{
+        display: block;
+    }
+    .header_navs{
+        position: relative;
+    }
+    .button{
+        width: 100%;
+    }
+    .main__block6 form button, .main__block6 form button{
+        width: 100%;
+    }
+    .burger{
+        position: absolute;
+        left: 10px;
+        top: 25%;
+    }
+    .block{
+        /* margin-left: 16px;
+        padding-right: 16px; */
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+    .desktop{
+        display: none;
+    }
     .header_navs .nav1, .header_navs .nav2{
         display: none;
+    }
+    .main__block2_content, .halfs_block, .main__block6_content, .footer__navs, .footer__navs .left_columns{
+        flex-direction: column;
+    }
+    .main__block4_content .halfs_block{
+        flex-direction: column-reverse;
+    }
+    .column{
+        width: 100%;
+    }
+    .main__block3{
+        /* padding-left: 0; */
+    }
+
+    .cards_block{
+        height: auto;
+
+    }
+    .main__block3 .project_card{
+        width: 100%;
+        margin: 0;
+        margin-bottom: 16px;
+    }
+    .main__block3 .card_1, .main__block3 .card_2{
+        height: 324px;
+        width: 48%;
+    }
+    .main__block3 .card_3{
+        height: 572px;
+    }
+    .main__block3 .card_4{
+        height: 245px;
+    }
+    /* .main__block3_content,  */
+    .cards_block{
+        width: 94vw;
+    }
+
+
+    .main__block5_gallery{
+        flex-direction: column;
+    }
+    .main__block5_gallery .project_card{
+        width: 100%;
+        font-size: 16px;
+    }
+
+    .main__block6{
+        padding-bottom: 54px;
+    }
+    .main__block6 form{
+        padding: 48px 0 54px 0;
+    }
+    .name_phone{
+        flex-direction: column;
+    }
+    .name_phone input{
+        width: 100%;
+    }
+    .attach_file{
+        margin-bottom: 56px;
     }
 }
