@@ -19,6 +19,13 @@ body{
     font-size: 18px;
     font-weight: 400;
     overflow-x: hidden;
+    line-height: 28px;
+}
+h1{
+    line-height: 50px;
+}
+h2{
+    line-height: 40px;
 }
 .mobile{
     display: none;
@@ -171,8 +178,11 @@ footer a{
     /* padding-left: 16px;
     padding-right: 16px; */
 }
-.main__block2 .block_heading, .main__block4 .block_heading{
-    margin-bottom: 30px;
+.main__block2 .block_heading{
+    margin-bottom: 24px;
+}
+.main__block4 .block_heading{
+    margin-bottom: 100px;
 }
 .main__block2_content, .main__block4_content{
     display: flex;
@@ -193,10 +203,9 @@ footer a{
     align-items: center;
     text-align: center;
 }
-.main__block2_content .column_left p, .main__block4_content .column_left p{
+.main__block2_content .text_half p{
     /* // adapt */
-    width: 425px;
-    margin-bottom: 50px;
+    margin-bottom: 48px;
 }
 /* //// */
 /* .main__block2_content .column_right{
@@ -464,8 +473,19 @@ footer a{
     .desktop{
         display: none;
     }
+    .block_top{
+        justify-content: center;
+        text-align: center;
+        margin-left: 30px;
+    }
     .header_navs .nav1, .header_navs .nav2{
         display: none;
+    }
+    body{
+        font-size: 16px;
+    }
+    .main__block1_content h1{
+        font-size: 36px;
     }
     .main__block2_content, .halfs_block, .main__block6_content, .footer__navs, .footer__navs .left_columns{
         flex-direction: column;
@@ -477,7 +497,8 @@ footer a{
         width: 100%;
     }
     .main__block3{
-        /* padding-left: 0; */
+        padding-top: 48px;
+        padding-bottom: 48px;
     }
 
     .cards_block{
@@ -503,6 +524,9 @@ footer a{
     .cards_block{
         width: 94vw;
     }
+    .main__block3 .button{
+        margin: 48px 0 48px 0;
+    }
 
 
     .main__block5_gallery{
@@ -510,7 +534,6 @@ footer a{
     }
     .main__block5_gallery .project_card{
         width: 100%;
-        font-size: 16px;
     }
 
     .main__block6{
@@ -527,5 +550,22 @@ footer a{
     }
     .attach_file{
         margin-bottom: 56px;
+    }
+    .main__block2 .text_half{
+        padding: 45px 0px 45px 0px;
+    }
+    .main__block4 .text_half{
+        padding: 92px 0px 92px 0px;
+    }
+    .main__block2_woods{
+        height: 406px;
+    }
+    .main__block5{
+        padding-top: 48px;
+        padding-bottom: 48px;
+    }
+    .main__block6{
+        padding-top: 54px;
+        padding-bottom: 54px;
     }
 }
