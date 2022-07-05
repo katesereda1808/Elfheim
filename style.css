@@ -31,28 +31,35 @@ h2{
     display: none;
 }
 header{
-    background-color: transparent;
-    padding-top: 30px;
-    position: absolute;
-    /* position: fixed; */
+    padding-top: 24px;
+    padding-bottom: 24px;
     position: relative;
     width: 100%;
-    top: 0;
-    
+    /* display: flex;
+    align-items: center; */
+}
+header a{
+    font-size: 16px;
+    font-weight: 600;
+    margin-right: 30px;
 }
 .main_page__header{
     background-color: rgba(0, 0, 0, 0.3);
 }
-header a{
+.main_page__header a{
     color: #FFFFFF;
-    font-size: 16px;
-    font-weight: 600;
-    margin-right: 30px;
+}
+.common__header{
+    background-color: #FAF9F7;
+}
+.common__header a{
+    color: #000000;
 }
 .header_navs{
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
     /* justify-content: space-between; */
 }
 .logo{
@@ -259,18 +266,21 @@ footer a, footer p{
 .main__block3 .block_heading{
 
 }
-.main__block3 .block_nav{
+/* .main__block3  */
+.block_nav{
     display: flex;
     margin-left: 5.5vw;
     min-width: 30px;
 }
-.main__block3 .nav_link{
+/* .main__block3  */
+.nav_link{
     color: #000000;
     padding: 3px 15px 3px 15px;
     border-radius: 14px;
     margin-right: 20px;
 }
-.main__block3 .nav_active{
+/* .main__block3  */
+.nav_active{
     background-color: #000000;
     color: #ffffff;
 }
@@ -380,10 +390,9 @@ footer a, footer p{
     padding-top: 150px;
     padding-bottom: 150px;
 }
-.main__block6_content{
-    display: flex;
-    justify-content: center;
-    /* width: 100%; */
+.paddings{
+    padding-left: 100px;
+    padding-right: 100px;
 }
 /* .main__block6_content .halfs_block{
     width: 100%;
@@ -403,12 +412,17 @@ footer a, footer p{
     justify-content: space-between;
     width: 100%;
 }
-.main__block6 form{
-    padding: 10px 50px 10px 50px;
+/* .main__block6  */
+.feedback_form{
+    /* padding: 10px 50px 10px 50px; */
+    padding: 10px 0 10px 0;
     display: flex;
     flex-direction: column;
+    margin-left: 30px;
 }
-.main__block6 form input{
+/* .main__block6  */
+/* form  */
+.feedback_form input{
     height: 50px;
     border-bottom: 1px solid #000000;
     margin-top: 20px;
@@ -418,10 +432,10 @@ footer a, footer p{
     font-size: 18px;
     font-weight: 400;
 }
-.name_phone input{
+.feedback_form .name_phone input{
     width: 45%;
 }
-.main__block6 form button{
+.feedback_form button{
     width: 226px;
 }
 .attach_file{
@@ -450,8 +464,16 @@ footer a, footer p{
     justify-content: center;
 }
 
+/* // projects page */
+.projects__block1, .projects__block2{
+    background-color: #FAF9F7;
+    overflow: hidden;
+}
 
-
+/* // project_page */
+.project_page__block1{
+    background-color: #FAF9F7;
+}
 @media (max-width:900px) {
     .mobile{
         display: block;
@@ -465,14 +487,15 @@ footer a, footer p{
     .main__block6 form button, .main__block6 form button{
         width: 100%;
     }
+    .paddings{
+        padding: 0;
+    }
     .burger{
         position: absolute;
         left: 10px;
         top: 25%;
     }
     .block{
-        /* margin-left: 16px;
-        padding-right: 16px; */
         padding-left: 16px;
         padding-right: 16px;
     }
@@ -496,28 +519,18 @@ footer a, footer p{
     .main__block2_content, .halfs_block, .main__block6_content, .footer__navs, .footer__navs .left_columns{
         flex-direction: column;
     }
-
-
     .wood_1{
-   
         top: 44%;
         right: 18%;
-        /* z-index: 2; */
     }
     .wood_2{
-
         top: 37%;
         right: 5%;
-        /* z-index: 1; */
     }
     .wood_3{
-     
         top: 10%;
         left: 10%;
-        /* z-index: 0; */
     }
-
-
     .main__block4_content .halfs_block{
         flex-direction: column-reverse;
     }
@@ -528,10 +541,8 @@ footer a, footer p{
         padding-top: 48px;
         padding-bottom: 48px;
     }
-
     .cards_block{
         height: auto;
-
     }
     .main__block3 .project_card{
         width: 100%;
@@ -555,15 +566,12 @@ footer a, footer p{
     .main__block3 .button{
         margin: 48px 0 48px 0;
     }
-
-
     .main__block5_gallery{
         flex-direction: column;
     }
     .main__block5_gallery .project_card{
         width: 100%;
     }
-
     .main__block6{
         padding-bottom: 54px;
     }
@@ -573,17 +581,22 @@ footer a, footer p{
     .name_phone{
         flex-direction: column;
     }
-    .name_phone input{
+    .feedback_form{
+        margin-left: 0;
+    }
+    .feedback_form .name_phone input{
         width: 100%;
     }
     .attach_file{
         margin-bottom: 56px;
     }
+    /* .main__block4  */
+    .text_half{
+        padding-top: 92px;
+        padding-bottom: 92px;
+    }
     .main__block2 .text_half{
         padding: 45px 0px 45px 0px;
-    }
-    .main__block4 .text_half{
-        padding: 92px 0px 92px 0px;
     }
     .main__block2_woods{
         height: 406px;
@@ -595,6 +608,9 @@ footer a, footer p{
     .main__block6{
         padding-top: 54px;
         padding-bottom: 54px;
+    }
+    .project_page .halfs_block{
+        flex-direction: column-reverse;
     }
     footer{
         padding: 48px 10px 48px 10px;
