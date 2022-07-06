@@ -13,6 +13,11 @@
     margin: 0;
     padding: 0;
     border: 0;
+    box-sizing: border-box;
+}
+.container{
+    box-sizing: border-box;
+    overflow: hidden;
 }
 body{
     font-family: 'Basically';
@@ -115,6 +120,7 @@ button{
     font-weight: 400;
     padding: 10px 40px 10px 40px;
     border-radius: 24px;
+    margin-bottom: 48px;
 }
 .button_white{
     color: #000000;
@@ -167,7 +173,8 @@ footer a, footer p{
     font-size: 36px;
     font-weight: 400;
 }
-.main__block1_content h1{
+/* .main__block1_content  */
+h1{
     font-size: 64px;
     font-weight: 400;
 }
@@ -191,12 +198,13 @@ footer a, footer p{
     /* padding-left: 16px;
     padding-right: 16px; */
 }
-.main__block2 .block_heading{
+/* .main__block2  */
+.block_heading{
     margin-bottom: 24px;
 }
-.main__block4 .block_heading{
+/* .main__block4 .block_heading{
     margin-bottom: 100px;
-}
+} */
 .main__block2_content, .main__block4_content{
     display: flex;
     justify-content: center;
@@ -216,9 +224,10 @@ footer a, footer p{
     align-items: center;
     text-align: center;
 }
-.main__block2_content .text_half p{
+/* .main__block2_content  */
+.text_half p{
     /* // adapt */
-    margin-bottom: 48px;
+    margin-bottom: 24px;
 }
 /* //// */
 /* .main__block2_content .column_right{
@@ -355,7 +364,7 @@ footer a, footer p{
 }
 .main__block4_content .emphasize{
     font-size: 24px;
-    margin: 30px 0 30px 0;
+    /* margin: 30px 0 30px 0; */
 }
 .faded{
     opacity: 0.5;
@@ -391,8 +400,8 @@ footer a, footer p{
     padding-bottom: 150px;
 }
 .paddings{
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-left: 7vw;
+    padding-right: 7vw;
 }
 /* .main__block6_content .halfs_block{
     width: 100%;
@@ -418,7 +427,7 @@ footer a, footer p{
     padding: 10px 0 10px 0;
     display: flex;
     flex-direction: column;
-    margin-left: 30px;
+    /* margin-left: 30px; */
 }
 /* .main__block6  */
 /* form  */
@@ -457,11 +466,14 @@ footer a, footer p{
     /* height: 700px; */
 }
 .text_half{
-    text-align: center;
+    /* text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: center; */
+    box-sizing: border-box;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 /* // projects page */
@@ -471,8 +483,27 @@ footer a, footer p{
 }
 
 /* // project_page */
-.project_page__block1{
+.project_page__block2{
     background-color: #FAF9F7;
+}
+
+.services{
+    /* box-sizing: border-box; */
+    background-color: #FAF9F7;
+}
+.services__block2{
+    padding-top: 150px;
+    padding-bottom: 150px;
+}
+
+
+.info__block1{
+    background-color: #000000;
+    color: #ffffff;
+}
+.info__block2, .info__block3{
+    background-color: #FAF9F7;
+    padding-bottom: 100px;
 }
 @media (max-width:900px) {
     .mobile{
@@ -484,7 +515,8 @@ footer a, footer p{
     .button{
         width: 100%;
     }
-    .main__block6 form button, .main__block6 form button{
+    /* .main__block6 form button, .main__block6 form button */
+    .feedback_form .button{
         width: 100%;
     }
     .paddings{
@@ -572,12 +604,9 @@ footer a, footer p{
     .main__block5_gallery .project_card{
         width: 100%;
     }
-    .main__block6{
-        padding-bottom: 54px;
-    }
-    .main__block6 form{
+    /* .main__block6 form{
         padding: 48px 0 54px 0;
-    }
+    } */
     .name_phone{
         flex-direction: column;
     }
@@ -594,6 +623,9 @@ footer a, footer p{
     .text_half{
         padding-top: 92px;
         padding-bottom: 92px;
+        height: 108vw;
+        max-height: 700px;
+        /* box-sizing: border-box; */
     }
     .main__block2 .text_half{
         padding: 45px 0px 45px 0px;
@@ -607,10 +639,15 @@ footer a, footer p{
     }
     .main__block6{
         padding-top: 54px;
-        padding-bottom: 54px;
+        /* padding-bottom: 54px; */
     }
     .project_page .halfs_block{
         flex-direction: column-reverse;
+    }
+
+    .services__block2{
+        padding-top: 54px;
+        /* padding-bottom: 54px; */
     }
     footer{
         padding: 48px 10px 48px 10px;
