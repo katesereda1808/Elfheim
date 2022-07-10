@@ -369,6 +369,9 @@ h1{
     margin-right: -0.2vw;
 }
 .card_name{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
     background-color: #FAF9F7;
     color: #000000;
     z-index: 1;
@@ -499,15 +502,23 @@ h1{
     background-color: #FAF9F7;
     overflow: hidden;
 }
+.projects__block1_content{
+    margin-right: -20px;
+    /* padding-right: 20px; */
+    overflow: hidden;
+}
 .projects_card{
-    padding: 1em;
-    margin: 20px;
+    /* padding: 1em; */
+    /* margin: 20px; */
     overflow: hidden;
     position: relative;
+    margin-right: 20px;
+    margin-bottom: 20px;
     
 }
 .card_img{
     overflow: hidden;
+    position: relative;
 }
 .projects_card img{
     /* position: absolute;
@@ -526,9 +537,9 @@ h1{
     transform:translate(-50%,-50%);
     object-fit: cover;
 }
-.projects_columns .card_3 img{
+.projects_columns .card_3 img, .projects_columns .card_1 img, .projects_columns .card_2 img, .projects .card_9 .card_img{
     width: 100%;
-    height: auto;
+    /* height: auto; */
 }
 .projects_columns{
     display: grid;
@@ -540,13 +551,15 @@ h1{
 }
 .projects_column_1, .projects_column_2, .projects_row_1{
     display: grid;
+    justify-items: stretch;
     /* gr */
 }
 
 .card_img{
     overflow: hidden;
+    /* box-sizing: border-box; */
 }
-.projects .card_3{
+.projects .card_3, .projects .card_4{
     /* height: 400px; */
     grid-column: 1/3;
 }
@@ -557,40 +570,64 @@ h1{
 .projects .card_4{
     /* height: 400px; */
     grid-column: 1/3;
+    /* padding-right: 20px; */
 }
 .projects .card_5, .projects .card_6{
     grid-row: 1/2.5;
 }
 .projects .card_3 .card_img{
     height: 500px;
+    width: 100%;
 }
-.projects .card_1 .card_img, .projects .card_2 .card_img, .projects .card_4 .card_img{
+.projects .card_4 img{
+    width: 100%;
+}
+.projects .card_4 .card_img{
     /* // адаптив */
-    height: 450px;
+    height: 210px;
+}
+.projects .card_1 .card_img, .projects .card_2 .card_img{
+    height: 288px;
+    /* height: 20vw;
+    min-height: 250px; */
 }
 .projects_column_2{
     grid-template-columns: 1fr 1fr;
 }
 .projects_row_1{
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 2.5fr 1fr;
 }
-.projects_row_1 .card_img{
+.projects_row_1 .card_img, .projects .card_9 img{
+    /* width: 50vw; */
     width: 100%;
-    height: auto;
+    /* height: auto; */
 }
 .projects .card_5 .card_img{
     height: 300px;
     /* grid-column: 0/1; */
 }
-.projects .card_6 .card_img, .projects .card_7 .card_img{
-    height: 300px;
+.projects .card_5 .card_img, .projects .card_6 .card_img{
+    
+    height: 37.222vw;
+    /* min-height: 336px; */
+    /* height: 100%; */
+    height: 100%;
     width: auto;
 }
+.projects .card_7 .card_img{
+    height: 100%;
+}
 .projects .card_8 .card_img, .projects .card_9 .card_img{
-    height: 300px;
+    /* height: 300px; */
+    height: 100%;
 }
 .projects_row_1 .card_10 .card_img, .projects_row_1 .card_11 .card_img, .projects_row_1 .card_12 .card_img{
+    /* width: 100%;
+    height: auto; */
     height: 400px;
+}
+.projects_row_1 .card_10 .card_img img, .projects_row_1 .card_11 .card_img img, .projects_row_1 .card_12 .card_img img{
+    width: 100%;
 }
 /* // project_page */
 .project_page__block2{
@@ -758,6 +795,33 @@ h1{
     .services__block2{
         padding-top: 54px;
         /* padding-bottom: 54px; */
+    }
+
+    .projects_columns, 
+    /* .projects_column_2,  */
+    .projects_row_1{
+        grid-template-columns: 1fr;
+    }
+    .projects .card_4{
+        /* padding-right: 0px; */
+    }
+    /* спозиционировать 8 карточку */
+    .projects .card_5, .projects .card_6, .projects .card_9{
+        grid-column: 1/3;
+        /* grid-row: 2/3; */
+    }
+    .projects .card_1 .card_img, .projects .card_2 .card_img, .projects .card_6 .card_img, .projects .card_7 .card_img, .projects .card_8 .card_img{
+        height: 76.8vw;
+    }
+    .projects .card_6 .card_img img{
+        width: 100%;
+    }
+    .projects .card_8{
+        grid-column: 2/3;
+        grid-row: 2;
+    }
+    .projects .card_5 .card_img, .projects .card_9 .card_img{
+        height: 142.933vw;
     }
     footer{
         padding: 48px 10px 48px 10px;
