@@ -774,9 +774,15 @@ summary::marker{
         height: 80px;
         border-bottom: 1px solid #000000;
     }
-    .mobile_nav li button{
+    .mobile_nav a{
+        color: #000000;
+    }
+    .mobile_menu button{
         background-color: transparent;
     }
+    /* .mobile_nav li button{
+        background-color: transparent;
+    } */
     .mobile_nav_go_back{
         margin-top: 58px;
         margin-bottom: 48px;
