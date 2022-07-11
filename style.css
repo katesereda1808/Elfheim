@@ -233,11 +233,12 @@ h1{
 /* .main__block2_content .column_right{
     position: relative;
 } */
-.main__block2_woods{
+.block_woods{
     position: relative;
     height: 700px;
 }
-.main__block2_content .wood{
+/* .main__block2_content  */
+.wood{
     position: absolute;
     /* z-index: 2; */
 }
@@ -498,8 +499,10 @@ h1{
 }
 
 /* // projects page */
-.projects__block1, .projects__block2{
+.projects, .error, .info, .materials, .privacy_policy, .project_page, .services, .designers{
     background-color: #FAF9F7;
+}
+.projects__block1, .projects__block2{
     overflow: hidden;
 }
 .projects__block1_content{
@@ -633,7 +636,9 @@ h1{
 .project_page__block2{
     background-color: #FAF9F7;
 }
-
+.project_page__block2 .block_heading, .project_page__block3 .block_heading, .project_page__block4 .block_heading{
+    margin-top: 88px;
+}
 .services{
     /* box-sizing: border-box; */
     background-color: #FAF9F7;
@@ -652,6 +657,46 @@ h1{
     background-color: #FAF9F7;
     padding-bottom: 100px;
 }
+summary, details{
+    outline: none;
+}
+.accordeon summary::-webkit-details-marker,
+.accordeon summary::marker{
+    background-color: aqua;
+    /* position: absolute;
+    display: none; */
+}
+.privacy_policy .block_heading{
+    margin-bottom: 48px;
+}
+.privacy_policy__text{
+    border-top: 1px solid #000000;
+    padding-top: 48px;
+    padding-bottom: 100px;
+}
+.error__block_content{
+    padding-top: 48px;
+    padding-bottom: 100px;
+}
+/* .accordeon__item[open] .arrow{
+    transform: rotate(180deg);
+    outline: none;
+    margin-right: -2.5px;
+} */
+/* .arrow{
+    position: absolute;
+    right: 20px;
+}
+details{
+    outline: none;
+}
+summary{
+    outline: none;
+}
+summary::-webkit-details-marker,
+summary::marker{
+    display: none;
+} */
 @media (max-width:900px) {
     .mobile{
         display: block;
@@ -788,13 +833,12 @@ h1{
         padding-top: 54px;
         /* padding-bottom: 54px; */
     }
-    .project_page .halfs_block{
+    .project_page .halfs_block, .materials__block1_content .halfs_block, .error__block_content .halfs_block{
         flex-direction: column-reverse;
     }
 
     .services__block2{
         padding-top: 54px;
-        /* padding-bottom: 54px; */
     }
 
     .projects_columns, 
