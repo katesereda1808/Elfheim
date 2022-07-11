@@ -514,9 +514,12 @@ h1{
     overflow: hidden;
 }
 .projects__block1_content{
-    margin-right: -20px;
+    /* margin-right: -20px; */
     /* padding-right: 20px; */
     overflow: hidden;
+}
+.projects__block1 .button{
+    margin-right: 20px;
 }
 .projects_card{
     /* padding: 1em; */
@@ -906,6 +909,9 @@ summary::marker{
     .projects_row_1{
         grid-template-columns: 1fr;
     }
+    .projects_card{
+        margin-right: 0;
+    }
     .projects .card_4{
         /* padding-right: 0px; */
     }
@@ -919,6 +925,9 @@ summary::marker{
     }
     .projects .card_6 .card_img img{
         width: 100%;
+    }
+    .projects .card_1, .projects .card_7{
+        margin-right: 20px;
     }
     .projects .card_8{
         grid-column: 2/3;
