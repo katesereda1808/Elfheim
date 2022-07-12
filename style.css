@@ -27,10 +27,10 @@ body{
     overflow-x: hidden;
     line-height: 28px;
 }
-h1{
-    line-height: 50px;
-    font-family: 'Bodoni';
+.hide_content{
+    opacity: 0;
 }
+
 h2{
     line-height: 40px;
     font-family: 'Bodoni';
@@ -186,6 +186,54 @@ footer a, footer p{
 h1{
     font-size: 64px;
     font-weight: 400;
+    line-height: 50px;
+    font-family: 'Bodoni';
+}
+.show_from_the_bottom{
+    animation: show_from_the_bottom 2s 1;
+}
+.increase_opacity{
+    animation: increase_opacity 3s 1;
+}
+.from_the_bottom_and_opacity{
+    animation: from_the_bottom_and_opacity 3s 1;
+    
+}
+@keyframes show_from_the_bottom{
+    0%{
+        transform: translateY(50px);
+        margin-bottom: -20px;
+        opacity: 0;
+    }
+    40%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+        margin-bottom: 0;
+    }
+}
+@keyframes increase_opacity{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+@keyframes from_the_bottom_and_opacity {
+    0%{
+        transform: translateY(50px);
+        margin-bottom: -20px;
+        opacity: 0;
+    }
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+        margin-bottom: 0;
+    }
 }
 .main__block1_content p{
     margin: 30px 0px 30px 0px;
@@ -209,11 +257,9 @@ h1{
 }
 /* .main__block2  */
 .block_heading{
-    margin-bottom: 24px;
+    /* margin-bottom: 24px; */
 }
-/* .main__block4 .block_heading{
-    margin-bottom: 100px;
-} */
+
 .main__block2_content, .main__block4_content{
     display: flex;
     justify-content: center;
@@ -236,7 +282,7 @@ h1{
 /* .main__block2_content  */
 .text_half p{
     /* // adapt */
-    margin-bottom: 24px;
+    margin-top: 24px;
 }
 /* //// */
 /* .main__block2_content .column_right{
@@ -439,7 +485,7 @@ h1{
     width: 100%;
 } */
 .main__block6_content .block_heading{
-    margin-bottom: 30px;
+    /* margin-bottom: 30px; */
 }
 .text_centre{
     text-align: center;
@@ -507,7 +553,9 @@ h1{
     padding-left: 30px;
     padding-right: 30px;
 }
-
+.text_half .button{
+    margin-top: 48px;
+}
 /* // projects page */
 .projects, .error, .info, .materials, .privacy_policy, .project_page, .services, .designers{
     background-color: #FAF9F7;
@@ -908,7 +956,7 @@ summary::marker{
         box-sizing: border-box;
     }
     .main__block2 .text_half{
-        padding: 45px 0px 45px 0px;
+        padding: 92px 0px 92px 0px;
     }
     .main__block2_woods{
         height: 406px;
