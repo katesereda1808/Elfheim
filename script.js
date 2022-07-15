@@ -72,4 +72,21 @@ function onEntry(entry) {
     observer.observe(item);
   }
 
+// setTimeout(() => {
+//   let form = document.querySelector('.form_block');
+//   form.setAttribute('dark', '')
+// }, 2000);
+document.querySelector('.feedback_form_btn').addEventListener('click', changeTheme)
+function changeTheme(e) {
+  e.preventDefault();
+  console.log('button clicked')
+  let transition_span = document.querySelector('.add_theme_transition');
+  transition_span.classList.toggle('theme__fill')
+}
+// let form_children = form.childNodes;
 
+// for (let i = 0; i < form_children.length; i++) {
+//   const item = form_children[i];
+//   console.log(item)
+//   item.setAttribute('dark','')
+// }
