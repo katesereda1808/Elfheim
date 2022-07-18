@@ -93,7 +93,7 @@ if(document.querySelector('.feedback_form_btn')){
 if(document.querySelector('.project_page')){
   let text_half = document.querySelector('.text_half');
   let img_half = document.querySelector('.img_half');
-  let texts_arr = [`<div class="text_half__content text_centre hidden" id="0"><div class="chevron desktop">
+  let texts_arr = [`<div class="text_half__content text_centre hidden first_slide" id="0"><div class="chevron desktop">
   <img src="./assets/Icons/Back.svg" alt="">
 </div>
 <h2 class="block_heading">Гостиная комната</h2>
@@ -161,6 +161,7 @@ if(document.querySelector('.project_page')){
 
 
   window.addEventListener('click', function name(e) {
+    // pageYOffset - это прокрутка относительно всего window
     // if(pageYOffset > 200 && pageYOffset < 400){
       // textChange()
       // находим id
@@ -177,3 +178,14 @@ if(document.querySelector('.project_page')){
 // событие - скролл на опр колич пикселей
 // действие-ответ на событие - пролистывание слайдера на xxx px
 // xxx px - 100vw (ширина viewport, ее нужно найти и на нее прокручивать)
+
+
+let sliding_block = document.querySelector('.sliding_block');
+sliding_block.addEventListener('scroll', (e)=>scrollTheBlock(e));
+
+function scrollTheBlock(e){
+  console.log(pageYOffset);
+  if(pageXOffset>100){
+    console.log(pageXOffset);
+  }
+}

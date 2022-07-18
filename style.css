@@ -210,8 +210,9 @@ h1{
     overflow-x: scroll;
     overflow-y: hidden;
     scroll-behavior: smooth;
-    /* padding-right: 10px;
-    padding-left: 10px; */
+}
+.sliding_block::-webkit-scrollbar{
+    width: 0;
 }
 /* .main__block2, .main__block3{
     min-width: 500px;
@@ -360,12 +361,14 @@ h1{
     top: 44%;
     right: 35%;
     z-index: 2;
+    animation: wood1 2s;
 }
 .wood_2{
     height: 133px;
     top: 37%;
     right: 25%;
     z-index: 1;
+    animation: wood2 2s;
 }
 .wood_3{
     height: 308px;
@@ -373,6 +376,34 @@ h1{
     /* left: 22%; */
     right: 52%;
     z-index: 0;
+    animation: wood3 2s;
+}
+@keyframes wood1{
+    from{
+        transform: translateY(50%);
+    }
+    to{
+        transform: translateY(0%);
+    }
+}
+@keyframes wood2{
+    from{
+        transform: translateX(50%);
+    }
+    to{
+        transform: translateX(0%);
+    }
+}
+@keyframes wood3{
+    from{
+        transform: translateX(-50%);
+        transform: translateY(-50%);
+    }
+    to{
+        transform: translateX(0%);
+        transform: translateY(0%);
+    }
+    
 }
 
 
@@ -436,6 +467,7 @@ h1{
     /* flex-wrap: wrap; */
     justify-content: space-around;
     width: 100vw;
+    max-width: 1700px;
 }
 .main_page__gallery_img{
     height: 300px;
@@ -449,7 +481,7 @@ h1{
     justify-content: flex-end;
     margin-bottom: 10px;
 }
-.project_card img{
+.main_page__gallery_img{
     position: absolute;
     width: 100%;
     height: auto;
@@ -457,6 +489,10 @@ h1{
     left:50%;
     transform:translate(-50%,-50%);
     object-fit:cover;
+}
+.main__block3_content .card_4 .main_page__gallery_img, .main__block3_content .card_5 .main_page__gallery_img{
+    height: 100%;
+    width: auto;
 }
 .cards_block{
     display: flex;
@@ -473,20 +509,26 @@ h1{
     width: 472px;
     height: 191px;
 }
-.main__block3 .card_4{
+/* .main__block3 .card_4{
     width: 328px;
     height: 530px;
     margin-left: 10px;
-}
-.main__block3 .card_5{
-    width: 524px;
-    height: 530px;
+} */
+.main__block3 .card_5, .main__block3 .card_4{
+    max-width: 350px;
+    width: 108.267vw;
+    /* max-width: max-content; */
+    /* height: 530px; */
     margin-left: 10px;
     margin-right: -0.2vw;
 }
+.main__block3 .card_5 .card_img, .main__block3 .card_4 .card_img{
+    height: 523px;
+}
 .card_name{
-    position: absolute;
-    bottom: 0;
+    
+    /* position: absolute;
+    bottom: 0; */
     width: 100%;
     background-color: #FAF9F7;
     color: #000000;
@@ -671,6 +713,12 @@ h1{
 .project_page .halfs_block{
     position: relative;
 }
+.project_page .text_half__content{
+    padding-top: 40px;
+}
+.project_page .first_slide{
+    padding-top: 0;
+}
 .img_half{
     position: relative;
     overflow: hidden;
@@ -824,6 +872,9 @@ h1{
     /* // адаптив */
     height: 210px;
 }
+ /* .card_4 .card_name{
+    margin-left: 1vw;
+} */
 .projects .card_1 .card_img, .projects .card_2 .card_img{
     height: 288px;
     /* height: 20vw;
@@ -873,7 +924,7 @@ h1{
 .chevron{
     /* margin-left: ; */
     position: absolute;
-    top: 80px;
+    top: 0;
     left: 30px;
 }
 /* // project_page */
@@ -1075,9 +1126,19 @@ summary::marker{
     .main__block3{
         padding-top: 48px;
         padding-bottom: 48px;
+        overflow: hidden;
     }
     .cards_block{
         height: auto;
+    }
+    .main__block3_content{
+        flex-direction: column;
+        align-items: center;
+        overflow: hidden;
+        width: 100%;
+        
+        /* padding-left: 16px;
+        padding-right: 16px; */
     }
     .main__block3 .project_card{
         width: 100%;
@@ -1091,8 +1152,15 @@ summary::marker{
     .main__block3 .card_3{
         height: 572px;
     }
-    .main__block3 .card_4{
+    /* .main__block3 .card_4{
         height: 245px;
+    } */
+    .main__block3 .card_4 .card_img{
+        height: 108.267vw;
+    }
+    .main__block3_content .card_4 .main_page__gallery_img{
+        width: 100%;
+        height: auto;
     }
     /* .main__block3_content,  */
     .cards_block{
@@ -1129,6 +1197,7 @@ summary::marker{
         /* height: 108vw; */
         /* max-height: 700px; */
         min-height: fit-content;
+        
         box-sizing: border-box;
     }
     .img_half{
@@ -1140,6 +1209,21 @@ summary::marker{
     .main__block2_woods{
         height: 406px;
     }
+    .sliding_block{
+        width: 100%;
+        height: auto;
+        /* min-width: 200px; */
+        /* display: flex; */
+        flex-direction: column;
+        /* justify-content: space-between;
+        position: relative;
+        overflow-x: scroll;
+        overflow-y: hidden; */
+        overflow-y: scroll;
+        overflow-x: hidden;
+        box-sizing: border-box;
+        /* scroll-behavior: smooth; */
+    }
     .main__block5{
         padding-top: 48px;
         padding-bottom: 48px;
@@ -1148,7 +1232,7 @@ summary::marker{
         padding-top: 54px;
         /* padding-bottom: 54px; */
     }
-    .project_page .halfs_block, .materials__block1_content .halfs_block, .error__block_content .halfs_block{
+    .sliding_block .halfs_block, .materials__block1_content .halfs_block, .error__block_content .halfs_block{
         flex-direction: column-reverse;
     }
     .project_page__block2 .block_heading, .project_page__block3 .block_heading, .project_page__block4 .block_heading{
