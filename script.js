@@ -145,8 +145,6 @@ if(document.querySelector('.project_page')){
       i=0;
     }
     img_half.innerHTML += arr[i];
-    
-    // нужно удалить класс анимации с предыдущей картинки, чтобы она не исчезала
   }
   function findSlide(arr, i){
     arr.map((item, index)=>{
@@ -158,34 +156,24 @@ if(document.querySelector('.project_page')){
   addText(texts_arr, 0);
   addImg(img_arr, 0);
   
-
-
-  window.addEventListener('click', function name(e) {
-    // pageYOffset - это прокрутка относительно всего window
-    // if(pageYOffset > 200 && pageYOffset < 400){
-      // textChange()
-      // находим id
-      let text = document.querySelector('.text_half__content');
-      let id = +text.id;
-      console.log(id+1);
-      addText(texts_arr, (id+1));
-      addImg(img_arr, (id+1));
-
-    // }
-  })
-}
-/// нужно написать event listener для прокрутки слайдов на главной странице
-// событие - скролл на опр колич пикселей
-// действие-ответ на событие - пролистывание слайдера на xxx px
-// xxx px - 100vw (ширина viewport, ее нужно найти и на нее прокручивать)
-
-
-let sliding_block = document.querySelector('.sliding_block');
-sliding_block.addEventListener('scroll', (e)=>scrollTheBlock(e));
-
-function scrollTheBlock(e){
-  console.log(pageYOffset);
-  if(pageXOffset>100){
-    console.log(pageXOffset);
+  let isEvent = false;
+  let project_block = document.querySelector('.project_page__block1_content');
+  console.log(project_block)
+  project_block.addEventListener('wheel', function name(e) {
+    if(e.deltaY >0 && window.scrollY < 100){
+      e.preventDefault();
+      e.stopPropagation();
+      if(!isEvent){
+        isEvent = true;
+        setTimeout( function() {
+        let text = document.querySelector('.text_half__content');
+        let id = +text.id;
+        addText(texts_arr, (id+1));
+        addImg(img_arr, (id+1));
+          isEvent = false;
+        }, 1500 );
+      }
+    }
   }
+  )
 }

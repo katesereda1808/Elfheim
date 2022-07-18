@@ -210,10 +210,16 @@ h1{
     overflow-x: scroll;
     overflow-y: hidden;
     scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
 }
 .sliding_block::-webkit-scrollbar{
     width: 0;
 }
+.sliding_block .block{
+    scroll-snap-align: start;
+}
+
+
 /* .main__block2, .main__block3{
     min-width: 500px;
     width: 190vw;
@@ -534,6 +540,10 @@ h1{
     color: #000000;
     z-index: 1;
 }
+.projects .card_name{
+    position: absolute;
+    bottom: 0;
+}
 
 
 
@@ -704,6 +714,9 @@ h1{
     padding-bottom: 100px; */
     min-height: 500px;
     /* position: relative; */
+}
+.project_page .halfs_block{
+    min-height: 550px;
 }
 .halfs_block .column_right{
     display: flex;
@@ -1142,6 +1155,7 @@ summary::marker{
     }
     .main__block3 .project_card{
         width: 100%;
+        max-width: none;
         margin: 0;
         margin-bottom: 16px;
     }
@@ -1156,7 +1170,7 @@ summary::marker{
         height: 245px;
     } */
     .main__block3 .card_4 .card_img{
-        height: 108.267vw;
+        height: 60vw;
     }
     .main__block3_content .card_4 .main_page__gallery_img{
         width: 100%;
