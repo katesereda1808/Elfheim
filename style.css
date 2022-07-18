@@ -200,14 +200,18 @@ h1{
     
 }
 .sliding_block{
+    background-color: #FAF9F7;
+    width: 100%;
+    height: 700px;
+    min-width: 200px;
     display: flex;
+    justify-content: space-between;
+    position: relative;
     overflow-x: scroll;
-    /* overflow-y: scroll;
-    box-sizing: border-box; */
-    padding-left: 10px;
-    padding-right: 10px;
-    /* width: 100%; */
-    /* width: 400px; */
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    /* padding-right: 10px;
+    padding-left: 10px; */
 }
 /* .main__block2, .main__block3{
     min-width: 500px;
@@ -295,7 +299,9 @@ h1{
 .block_heading{
     /* margin-bottom: 24px; */
 }
-
+.main__block2_content{
+    width: 100vw;
+}
 .main__block2_content, .main__block4_content{
     display: flex;
     justify-content: center;
@@ -427,8 +433,9 @@ h1{
 .main__block3_content{
     display: flex;
     align-items: flex-start;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     justify-content: space-around;
+    width: 100vw;
 }
 .main_page__gallery_img{
     height: 300px;
@@ -531,8 +538,8 @@ h1{
     padding-bottom: 150px; */
 }
 .form_block{
-    padding-top: 150px;
-    padding-bottom: 150px;
+    /* padding-top: 150px;
+    padding-bottom: 150px; */
     /* position: relative; */
 }
 .paddings{
@@ -651,10 +658,15 @@ h1{
 /* // для блоков, разделенных пополам */
 .halfs_block{
     display: flex;
-    padding-top: 100px;
-    padding-bottom: 100px;
-    min-height: 900px;
+    /* padding-top: 100px;
+    padding-bottom: 100px; */
+    min-height: 500px;
     /* position: relative; */
+}
+.halfs_block .column_right{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .project_page .halfs_block{
     position: relative;
@@ -685,9 +697,7 @@ h1{
     padding-right: 30px;
 }
 .project_img_animation{
-    animation: slideUp 2s ;
-
-    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+    animation: slideUp 3s linear;
 }
 .zoomed{
     transform: scale(2);
@@ -698,7 +708,7 @@ h1{
 }
 @keyframes slideUp{
     from{
-        transform: translateY(300%);
+        transform: translateY(150%);
     }
     to{
         transform: translateY(0%);
@@ -877,9 +887,8 @@ h1{
     /* box-sizing: border-box; */
     background-color: #FAF9F7;
 }
-.services__block2{
+.services__block1{
     padding-top: 150px;
-    padding-bottom: 150px;
 }
 
 .info__block1, .info__block2{
@@ -1120,8 +1129,10 @@ summary::marker{
         /* height: 108vw; */
         /* max-height: 700px; */
         min-height: fit-content;
-        
         box-sizing: border-box;
+    }
+    .img_half{
+        height: 108.267vw;
     }
     .main__block2 .text_half{
         padding: 92px 0px 92px 0px;
@@ -1150,6 +1161,9 @@ summary::marker{
         left: 2%;
         z-index: 3;
         background-color: transparent;
+    }
+    .services__block1{
+        padding-top: 50px;
     }
 
     .services__block2{
