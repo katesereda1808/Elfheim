@@ -225,15 +225,7 @@ h1{
     width: 190vw;
     height: 700px;
 } */
-.test_block1, .test_block2{
-    width: 1000px;
-    height: 500px;
-    /* box-sizing: border-box;
-    position: static; */
-}
-.test_block1{
-    background-color: hotpink;
-}
+
 
 @keyframes show_from_the_bottom{
     0%{
@@ -330,13 +322,9 @@ h1{
 }
 /* .main__block2_content  */
 .text_half p{
-    /* // adapt */
     margin-top: 24px;
+    margin-bottom: 24px;
 }
-
-
-
-
 .text_half__content{
     opacity: 1;
     transition: opacity 2s, visibility 0s;
@@ -367,6 +355,8 @@ h1{
     top: 44%;
     right: 35%;
     z-index: 2;
+}
+.wood_animation_1{
     animation: wood1 2s;
 }
 .wood_2{
@@ -374,6 +364,8 @@ h1{
     top: 37%;
     right: 25%;
     z-index: 1;
+}
+.wood_animation_2{
     animation: wood2 2s;
 }
 .wood_3{
@@ -382,6 +374,8 @@ h1{
     /* left: 22%; */
     right: 52%;
     z-index: 0;
+}
+.wood_animation_3{
     animation: wood3 2s;
 }
 @keyframes wood1{
@@ -562,11 +556,31 @@ h1{
 .main__block5{
     padding-bottom: 50px;
 }
+.project_card{
+    margin-right: 30px;
+}
 .main__block5_gallery{
     display: flex;
     justify-content: space-around;
     align-items: center;
     overflow-x: scroll;
+    /* overflow-y: hidden; */
+    width: 100%;
+    height: 600px;
+    box-sizing: border-box;
+
+
+    /* background-color: #FAF9F7;
+    width: 100%;
+    height: 700px;
+    min-width: 200px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory; */
 }
 .main__block5 .card_1{
     width: 196px;
@@ -586,20 +600,10 @@ h1{
 }
 .main__block6{
     position: relative;
-    /* padding-top: 150px;
-    padding-bottom: 150px; */
-}
-.form_block{
-    /* padding-top: 150px;
-    padding-bottom: 150px; */
-    /* position: relative; */
 }
 .paddings{
     padding-left: 7vw;
     padding-right: 7vw;
-}
-.main__block6_content .block_heading{
-    /* margin-bottom: 30px; */
 }
 .text_centre{
     text-align: center;
@@ -615,17 +619,10 @@ h1{
 }
 /* .main__block6  */
 .feedback_form{
-    /* padding: 10px 50px 10px 50px; */
     padding: 10px 0 10px 0;
     display: flex;
     flex-direction: column;
-    /* margin-left: 30px; */
 }
-/* .main__block6  */
-/* form  */
-/* [dark].feedback_form input{
-    border-bottom: 1px solid #ffffff;
-} */
 .feedback_form input{
     height: 50px;
     color: var(--var-text);
@@ -654,32 +651,22 @@ h1{
     background-color: var(--var-bg);
     color: var(--var-text);
     mix-blend-mode: difference;
-    /* transform: translateX(-100%); */
-	/* transition: transform 4s linear; */
-    /* position: fixed; */
     position: absolute;
     bottom: 0;
 	inset: 0;
-    /* inset: 300px -200px 0 0 ; */
-	/* height: 100%; */
 	animation: theme_animation 5s linear 1;
     pointer-events: none;
 }
 @keyframes theme_animation {
     0%{
-        /* transform: translateX(100%); */
         bottom: 0;
         left: 0;
         height: 0;
         width: 0;
-        /* transform: scale(0%); */
-
     }
     100%{
-        /* transform: translateX(0%); */
         height: 100%;
         width: 100%;
-        /* transform: scale(100%); */
     }
 }
 
@@ -699,7 +686,6 @@ h1{
     color: var(--var-text);
     margin-top: 50px;
     margin-bottom: 100px;
-    /* background-color: #FAF9F7; */
     background-color: transparent;
     display: flex;
     align-items: center;
@@ -710,10 +696,7 @@ h1{
 /* // для блоков, разделенных пополам */
 .halfs_block{
     display: flex;
-    /* padding-top: 100px;
-    padding-bottom: 100px; */
     min-height: 500px;
-    /* position: relative; */
 }
 .project_page .halfs_block{
     min-height: 550px;
@@ -726,7 +709,7 @@ h1{
 .project_page .halfs_block{
     position: relative;
 }
-.project_page .text_half__content{
+.project_page_desktop .text_half__content{
     padding-top: 40px;
 }
 .project_page .first_slide{
@@ -744,15 +727,36 @@ h1{
 
     /* height: 700px; */
 }
+.main__block4 .img_half img{
+    height: 100%;
+}
+.scroll_icon{
+    /* height: 47px; */
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+@keyframes scrollArrow {
+    0%{
+        transform: translateY(0%);
+    }
+    50%{
+        transform: translateY(100%);
+    }
+    100%{
+        transform: translateY(0%);
+    }
+}
+.scroll_arrow{
+    width: 12px;
+    margin-top: 7px;
+    animation: scrollArrow 1s ease-in-out infinite;
+}
 .project_img{
     position: absolute;
 }
 .text_half{
-    /* text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center; */
     box-sizing: border-box;
     padding-left: 30px;
     padding-right: 30px;
@@ -799,35 +803,22 @@ h1{
     overflow: hidden;
 }
 .projects__block1_content{
-    /* margin-right: -20px; */
-    /* padding-right: 20px; */
     overflow: hidden;
 }
 .projects__block1 .button{
     margin-right: 20px;
 }
 .projects_card{
-    /* padding: 1em; */
-    /* margin: 20px; */
     overflow: hidden;
     position: relative;
     margin-right: 20px;
     margin-bottom: 20px;
-    
 }
 .card_img{
     overflow: hidden;
     position: relative;
 }
 .projects_card img{
-    /* position: absolute;
-    height: 100%;
-    width: auto;
-    transform:translate(0%,-50%);
-    object-fit: cover;
-    z-index: 1; */
-
-
     position: absolute;
     width: auto;
     height: 100%;
@@ -838,7 +829,6 @@ h1{
 }
 .projects_columns .card_3 img, .projects_columns .card_1 img, .projects_columns .card_2 img, .projects .card_9 .card_img{
     width: 100%;
-    /* height: auto; */
 }
 .projects_columns{
     display: grid;
@@ -851,12 +841,10 @@ h1{
 .projects_column_1, .projects_column_2, .projects_row_1{
     display: grid;
     justify-items: stretch;
-    /* gr */
 }
 
 .card_img{
     overflow: hidden;
-    /* box-sizing: border-box; */
 }
 .projects .card_3, .projects .card_4{
     /* height: 400px; */
@@ -1010,30 +998,7 @@ summary::marker{
     padding-top: 48px;
     padding-bottom: 100px;
 }
-/* .accordeon__item[open] .arrow{
-    transform: rotate(180deg);
-    outline: none;
-    margin-right: -2.5px;
-} */
-/* .arrow{
-    position: absolute;
-    right: 20px;
-}
-details{
-    outline: none;
-}
-summary{
-    outline: none;
-}
-summary::-webkit-details-marker,
-summary::marker{
-    display: none;
-} */
 
-/* .color_black{
-    background-color: #000000;
-    color: #ffffff;
-} */
 @media (max-width:900px) {
     .mobile{
         display: block;
@@ -1069,9 +1034,6 @@ summary::marker{
     .mobile_menu button{
         background-color: transparent;
     }
-    /* .mobile_nav li button{
-        background-color: transparent;
-    } */
     .mobile_nav_go_back{
         margin-top: 58px;
         margin-bottom: 48px;
@@ -1098,7 +1060,7 @@ summary::marker{
         padding-left: 16px;
         padding-right: 16px;
     }
-    .desktop{
+    .desktop, .project_page_desktop{
         display: none;
     }
     .block_top{
@@ -1117,6 +1079,9 @@ summary::marker{
     }
     .main__block2_content, .halfs_block, .main__block6_content, .footer__navs, .footer__navs .left_columns{
         flex-direction: column;
+    }
+    .main__block2_content{
+        width: 100%;
     }
     .wood_1{
         top: 44%;
@@ -1149,9 +1114,6 @@ summary::marker{
         align-items: center;
         overflow: hidden;
         width: 100%;
-        
-        /* padding-left: 16px;
-        padding-right: 16px; */
     }
     .main__block3 .project_card{
         width: 100%;
@@ -1166,9 +1128,6 @@ summary::marker{
     .main__block3 .card_3{
         height: 572px;
     }
-    /* .main__block3 .card_4{
-        height: 245px;
-    } */
     .main__block3 .card_4 .card_img{
         height: 60vw;
     }
@@ -1188,10 +1147,10 @@ summary::marker{
     }
     .main__block5_gallery .project_card{
         width: 100%;
+        height: 200px;
+        margin-right: 0;
+        /* height: 90vw; */
     }
-    /* .main__block6 form{
-        padding: 48px 0 54px 0;
-    } */
     .name_phone{
         flex-direction: column;
     }
@@ -1217,8 +1176,11 @@ summary::marker{
     .img_half{
         height: 108.267vw;
     }
+    .main__block4 .img_half{
+        height: 82.267vw;
+    }
     .main__block2 .text_half{
-        padding: 92px 0px 92px 0px;
+        padding: 0px 0px 92px 0px;
     }
     .main__block2_woods{
         height: 406px;
@@ -1226,17 +1188,10 @@ summary::marker{
     .sliding_block{
         width: 100%;
         height: auto;
-        /* min-width: 200px; */
-        /* display: flex; */
         flex-direction: column;
-        /* justify-content: space-between;
-        position: relative;
-        overflow-x: scroll;
-        overflow-y: hidden; */
         overflow-y: scroll;
         overflow-x: hidden;
         box-sizing: border-box;
-        /* scroll-behavior: smooth; */
     }
     .main__block5{
         padding-top: 48px;
