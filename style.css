@@ -71,8 +71,8 @@ header a{
     /* justify-content: space-between; */
 }
 .logo img{
-    height: 76px;
-    margin: 0 100px 0 100px;
+    height: 127px;
+    margin: 0px 50px 0 50p
 }
 .header_navs, .header_navs nav{
     display: flex;
@@ -123,6 +123,7 @@ button{
     font-size: 18px;
     font-weight: 400;
     cursor: pointer;
+    background-color: transparent;
 }
 .button{
     font-size: 18px;
@@ -462,10 +463,14 @@ h1{
 
 
 .main__block3_content{
-    display: flex;
-    align-items: flex-start;
+    /* display: flex;
+    align-items: flex-start; */
     /* flex-wrap: wrap; */
-    justify-content: space-around;
+    /* justify-content: space-around; */
+    /* display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    justify-items: left; */
+    display: flex;
     width: 100vw;
     max-width: 1700px;
 }
@@ -495,19 +500,33 @@ h1{
     width: auto;
 }
 .cards_block{
-    display: flex;
+    /* display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-between; */
     width: 472px;
     height: 566px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 .main__block3 .card_1,.main__block3_content .card_2{
     width: 224px;
     height: 288px;
 }
+.main__block3 .card_1{
+    grid-column: 1;
+}
+.main__block3 .card_2{
+    grid-column: 2/3;
+}
 .main__block3 .card_3{
     width: 472px;
     height: 191px;
+    grid-column: 1/3;
+}
+.main__block3 .card_1 .card_img, .main__block3 .card_2 .card_img{
+    height: 288px;
+    overflow: hidden;
+    position: relative;
 }
 /* .main__block3 .card_4{
     width: 328px;
@@ -515,15 +534,20 @@ h1{
     margin-left: 10px;
 } */
 .main__block3 .card_5, .main__block3 .card_4{
-    max-width: 350px;
-    width: 108.267vw;
+    /* max-width: 350px; */
+    /* width: 108.267vw; */
+
     /* max-width: max-content; */
     /* height: 530px; */
-    margin-left: 10px;
+    /* width: 100%; */
+    width: fit-content;
+    min-width: 300px;
+    margin-left: 24px;
     margin-right: -0.2vw;
 }
 .main__block3 .card_5 .card_img, .main__block3 .card_4 .card_img{
     height: 523px;
+    width: 100%;
 }
 .card_name{
     
@@ -533,6 +557,7 @@ h1{
     background-color: #FAF9F7;
     color: #000000;
     z-index: 1;
+    width: 100%;
 }
 .projects .card_name{
     position: absolute;
@@ -557,7 +582,7 @@ h1{
     padding-bottom: 50px;
 }
 .project_card{
-    margin-right: 30px;
+    margin-right: 20px;
 }
 .main__block5_gallery{
     display: flex;
@@ -946,6 +971,9 @@ h1{
 .info__block1, .info__block2{
     padding-bottom: 100px;
 }
+.arrow{
+    cursor: pointer;
+}
 .info__block1{
     background-color: #000000;
     color: #ffffff;
@@ -1121,10 +1149,10 @@ summary::marker{
         margin: 0;
         margin-bottom: 16px;
     }
-    .main__block3 .card_1, .main__block3 .card_2{
-        height: 324px;
-        width: 48%;
+    .main__block3 .card_1{
+        margin-right: 20px;
     }
+    
     .main__block3 .card_3{
         height: 572px;
     }
@@ -1138,6 +1166,12 @@ summary::marker{
     /* .main__block3_content,  */
     .cards_block{
         width: 94vw;
+    }
+    .cards_block {
+        /* width: 472px;
+        height: 566px;
+        display: grid; */
+        grid-template-columns: 1fr 1fr;
     }
     .main__block3 .button{
         margin: 48px 0 48px 0;

@@ -77,16 +77,91 @@ function onEntry(entry) {
 //   let form = document.querySelector('.form_block');
 //   form.setAttribute('dark', '')
 // }, 2000);
-if(document.querySelector('.feedback_form_btn')){
-  document.querySelector('.feedback_form_btn').addEventListener('click', changeTheme)
-  function changeTheme(e) {
-  e.preventDefault();
+
+
+
+// валидация формы
+let form = document.querySelector('.feedback_form');
+let inputs=document.querySelectorAll('.feedback_form input');
+let regName = /[a-b]|[а-я]/;
+let regNumber = /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/;
+let regEmail = /^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$/;
+
+// if(form){
+//   form.addEventListener('submit', onSubmit);
+// }
+function changeTheme() {
   console.log('button clicked')
   let transition_span = document.querySelector('.add_theme_transition');
   transition_span.classList.toggle('theme__fill')
 }
+function validate(regex, str){
+  return regex.test(str);
+};
+function clearWarning(input, flag){
+  let inputContainer = input.parentElement;
+  inputContainer.classList.remove('invalid');
+  flag=='valid'?
+  inputContainer.children[1].src='images/check.svg':
+  inputContainer.children[1].src='images/arrow.svg';
+  Array.from(inputContainer.children).map((el)=>{
+    if(el.classList.contains('error')){
+      el.remove();
+    };
+  });
+};
+function handleValidation(regEx, str){
+  let inputContainer = str.parentElement;
+  if(!validate(regEx, str.value)){
+    if(!inputContainer.classList.contains('invalid')){
+      // inputContainer.classList.add('invalid');
+      // inputContainer.children[1].src='./assets/Icons/';
+      // let p = document.createElement('p');
+      // p.className='error';
+      // p.innerText='Попробуйте еще раз';
+      // inputContainer.appendChild(p);
+      console.log('not valid')
+    };
+  }else{
+      // clearWarning(str, 'valid');
+      console.log('valid')
+  };
+};
 
+function onSubmit(e){
+  e.preventDefault();
+  changeTheme();
+  console.log('submit!')
+  console.log(inputs[0])
+  for (let i = 0; i < inputs.length; i++) {
+    let regEx;
+    switch (inputs[i].name) {
+      case 'name':
+        regEx=regName;
+        break;
+      case 'number':
+        regEx=regNumber;
+        break;
+      case 'email':
+        if(inputs[i].value){
+          regEx=regEmail;
+        }else{
+          // clearWarning(inputs[i],'empty');
+        }
+        break;
+    };
+    if(regEx){
+      handleValidation(regEx, inputs[i]);
+    };
+  };
+};
+
+if(form){
+  // document.querySelector('.feedback_form_btn').addEventListener('click', changeTheme)
+  form.addEventListener('submit', onSubmit);
 }
+
+
 
 function isDesktop() {
   if(document.documentElement.clientWidth>900){
@@ -185,7 +260,9 @@ if(document.querySelector('.project_page_desktop')){
   function findSlide(arr, i){
     arr.map((item, index)=>{
         if(i === index){
-          text_half.innerHTML=item;
+          if(text_half){
+            text_half.innerHTML=item;
+          }
         }
       });
   }
@@ -216,3 +293,6 @@ if(gallery){
 // chevron_right.addEventListener('click', ()=>showSlides(findSlide()+1));
 ///////////////////
 ////////////////////
+
+
+
