@@ -142,7 +142,7 @@
                   </div>
                   
                   <div class="main__block3_content">
-                      <div class="cards_block">
+                      <div class="cards_block asymmetric">
                           <div class="project_card card_1">
                               <div class="card_img">
                                 <img class="main_page__gallery_img" src="./assets/Images/Gallery/Main/1.jpg" alt="">
@@ -156,7 +156,10 @@
                               <div class="card_name">Кофейный столик</div>
                           </div>
                           <div class="project_card card_3">
-                              <img class="main_page__gallery_img" src="./assets/Images/Gallery/Main/3.jpg" alt="">
+                              <div class="card_img">
+                                <img class="main_page__gallery_img" src="./assets/Images/Gallery/Main/3.jpg" alt="">
+                              </div>
+                              
                               <div class="card_name">Минималистичный комод</div>
                           </div>
                       </div>
@@ -173,6 +176,17 @@
                           </div>
                           <div class="card_name">Обеденный стол в минимализме</div>
                       </div>
+
+
+                      <!-- /// -->
+                      
+                      
+                      <div class="project_card card_4">
+                         
+                      </div>
+                      <div class="project_card card_5 desktop">
+                          
+                      </div>
                       
                       <button class="button button_black mobile">Все проекты</button>
                   </div>
@@ -188,9 +202,18 @@
                   <div class="halfs_block">
                     <div class="column text_half text_centre block">
                         <h2 class="block_heading emersion_animation hide_content">Почему мы?</h2>
-                        <p class="faded opacity_animation hide_content">Используем только высококачественные материалы</p>
-                      <p class="emphasize opacity_animation hide_content">Решаем задачи любой сложности.</p>
-                      <p class="faded opacity_animation hide_content">Индивидуальный подход к каждому клиенту</p>
+                        <button class="readmore_btn button_black button">Читать далее...</button>
+                        <div class="text_carousel">
+                            <div class="text_carousel__item text_carousel__item_1 text_carousel_animation  opacity_animation hide_content">
+                                <p>Используем только<br class="text-wrap"> высококачественные материалы</p>
+                            </div>
+                            <div class="text_carousel__item text_carousel__item_2 opacity_animation hide_content">
+                                <p>Решаем задачи любой сложности.</p>
+                            </div>
+                            <div class="text_carousel__item text_carousel__item_3 opacity_animation hide_content">
+                                <p>Индивидуальный подход <br class="text-wrap">к каждому клиенту</p>
+                            </div>
+                        </div>
                     </div>
                     <div class="column img_half">
                         <img src="./assets/Images/Coworkers.jpg" alt="">
@@ -220,8 +243,6 @@
                             <div class="card_name">Отделка столярных изделий</div>
                         </div>
                     </div>
-                    
-    
                 </div>
             </div>
             <div class="main__block6 ">
@@ -236,12 +257,25 @@
                         <div class="column column_right block paddings">
                             <form class="feedback_form opacity_animation hide_content" action="submit">
                                 <div class="name_phone">
-                                  <input type="text" placeholder="Имя" name="name">
-                                  <input type="text" placeholder="Номер телефона" name="phone">
+                                    <div class="input_container">
+                                        <input class="feedback_form__input" type="text" placeholder="Имя" name="name">
+
+                                    </div>
+                                    <div class="input_container">
+                                        <input class="feedback_form__input" type="text" placeholder="Номер телефона" name="number">
+                                    </div>
                                 </div>
-                                  <input type="text" placeholder="Email" name="email">
-                                  <input type="text" placeholder="Комментарий" name="commentary">
-                                  <button type="button" class="attach_file"> <img src="./assets/Icons/Attach file.svg" alt=""> Прикрепить файл</button>
+                                <div class="input_container">
+                                    <input class="feedback_form__input" type="text" placeholder="Email" name="email">
+                                </div>
+                                <div class="input_container">
+                                    <input class="feedback_form__input" type="text" placeholder="Комментарий" name="commentary">
+                                </div>
+                                <div class="attach_file">
+                                    <!-- <img src="./assets/Icons/Attach file.svg" alt=""> -->
+                                    <input type="file" id="files" multiple placeholder="Прикрепить файл">
+                                    <button type="button" class="attach_file"> <img src="./assets/Icons/Attach file.svg" alt=""> Прикрепить файл</button>
+                                </div>
                                   <button type="submit" class="button button_black feedback_form_btn">Оставить заявку</button>
                             </form>
                         </div>

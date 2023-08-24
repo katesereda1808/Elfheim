@@ -1,15 +1,14 @@
+'use strict';
 let closeNavBar = document.querySelector('.mobile_nav_go_back');
 let mobileMenu = document.querySelector('.mobile_menu');
-openNavBar = document.querySelector('.burger');
+let openNavBar = document.querySelector('.burger');
 openNavBar.addEventListener('click', openMenu)
-function openMenu(){
-    console.log('open')
+function openMenu() {
     mobileMenu.classList.remove('hide');
 }
 closeNavBar.addEventListener('click', closeMenu);
 function closeMenu(){
-    mobileMenu.classList.add('hide');
-    console.log('close');
+  mobileMenu.classList.add('hide');
 }
 
 
@@ -32,8 +31,7 @@ function onEntry(entry) {
         //   console.log('wood')
         //   change.target.classList.add('wood_animation_3')
         // }
-        if(change.target.classList.contains('wood')){
-          console.log('wood')
+        if (change.target.classList.contains('wood')) {
           change.target.classList.add('wood1')
         }
 
@@ -79,6 +77,11 @@ function onEntry(entry) {
 // }, 2000);
 
 
+// ассиметричная сетка в галерее
+// if (document.querySelector('.')) {
+
+// }
+
 
 // валидация формы
 let form = document.querySelector('.feedback_form');
@@ -91,7 +94,6 @@ let regEmail = /^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$/;
 //   form.addEventListener('submit', onSubmit);
 // }
 function changeTheme() {
-  console.log('button clicked')
   let transition_span = document.querySelector('.add_theme_transition');
   transition_span.classList.toggle('theme__fill')
 }
@@ -100,39 +102,37 @@ function validate(regex, str){
 };
 function clearWarning(input, flag){
   let inputContainer = input.parentElement;
-  inputContainer.classList.remove('invalid');
-  flag=='valid'?
-  inputContainer.children[1].src='images/check.svg':
-  inputContainer.children[1].src='images/arrow.svg';
-  Array.from(inputContainer.children).map((el)=>{
-    if(el.classList.contains('error')){
-      el.remove();
-    };
-  });
+  input.classList.remove('input_error');
+  if (flag == 'valid') {
+    if (inputContainer.children[1]) {
+      inputContainer.children[1].remove()
+    }
+  }
 };
-function handleValidation(regEx, str){
-  let inputContainer = str.parentElement;
-  if(!validate(regEx, str.value)){
-    if(!inputContainer.classList.contains('invalid')){
-      // inputContainer.classList.add('invalid');
-      // inputContainer.children[1].src='./assets/Icons/';
-      // let p = document.createElement('p');
-      // p.className='error';
-      // p.innerText='Попробуйте еще раз';
-      // inputContainer.appendChild(p);
-      console.log('not valid')
+function handleValidation(regEx, input) {
+  let inputContainer = input.parentElement;
+  if (!validate(regEx, input.value)) {
+    if (!input.classList.contains('input_error')) {
+      input.classList.add('input_error');
+
+      let p = document.createElement('p');
+      p.className = 'input_error__warning';
+      p.innerText = 'Попробуйте еще раз';
+      inputContainer.appendChild(p);
     };
   }else{
-      // clearWarning(str, 'valid');
-      console.log('valid')
+    clearWarning(input, 'valid');
   };
 };
+
+
+// проблема - при смене темы красный цвет инвертируется в зеленый
+// - решение ? сменить цвет на зеленый?
+// вынести красные объекты на слой выше, чем инвертируемый слой
 
 function onSubmit(e){
   e.preventDefault();
   changeTheme();
-  console.log('submit!')
-  console.log(inputs[0])
   for (let i = 0; i < inputs.length; i++) {
     let regEx;
     switch (inputs[i].name) {
@@ -143,11 +143,11 @@ function onSubmit(e){
         regEx=regNumber;
         break;
       case 'email':
-        if(inputs[i].value){
+        // if(inputs[i].value){
           regEx=regEmail;
-        }else{
-          // clearWarning(inputs[i],'empty');
-        }
+        // }else{
+        //   clearWarning(inputs[i],'empty');
+        // }
         break;
     };
     if(regEx){
@@ -156,8 +156,7 @@ function onSubmit(e){
   };
 };
 
-if(form){
-  // document.querySelector('.feedback_form_btn').addEventListener('click', changeTheme)
+if (form) {
   form.addEventListener('submit', onSubmit);
 }
 
@@ -176,7 +175,14 @@ function isDesktop() {
 if(document.querySelector('.project_page_desktop')){
   let text_half = document.querySelector('.text_half');
   let img_half = document.querySelector('.img_half');
-  let texts_arr = [`<div class="text_half__content text_centre hidden first_slide" id="0"><div class="chevron desktop">
+  let texts_arr = 
+  // [];
+  // const textBlocks = document.querySelectorAll(".text_half");
+  // textBlocks.forEach((block) => {
+  //   let content = block.innerHTML;
+  //   texts_arr.push(content);
+  // })
+  [`<div class="text_half__content text_centre hidden" id="0"><div class="chevron desktop">
   <img src="./assets/Icons/Back.svg" alt="">
 </div>
 <h2 class="block_heading">Гостиная комната</h2>
@@ -270,7 +276,28 @@ if(document.querySelector('.project_page_desktop')){
 
 let gallery = document.querySelector('.main__block5_gallery');
 if(gallery){
-  console.log(document.querySelectorAll('.project_card'))
+  // console.log(document.querySelectorAll('.project_card'))
+  // блок, который будет пролистываться вправо
+  const horizontalScrollBlock = document.querySelector(".main__block2_content");
+  // блок-контейнер, в котором горизонтально расположены блоки-слайды
+  const blockContainer = document.querySelector(".sliding_block");
+  horizontalScrollBlock.addEventListener("wheel", function scrollRight(e) {
+    // расстояние от вершины окна до вершины блока
+    let positionTop = blockContainer.getBoundingClientRect().top;
+    if (
+      positionTop + blockContainer.clientHeight <= window.innerHeight &&
+      positionTop >= 0
+    ) {
+      // добавить запрет скролла вниз на время перелистывания вправо
+      document.body.style.overflow = "hidden";
+      // пролистывание вправо на ширину пролистываемого элемента (horizontalScrollBlock)
+      blockContainer.scrollTo(horizontalScrollBlock.offsetWidth, 0);
+    }
+    // вернуть скролл
+    setTimeout(() => {
+      document.body.style.overflow = "scroll";
+    }, 1000);
+  });
 }
 ////////////
 // function showSlides(slides, n){
@@ -295,4 +322,10 @@ if(gallery){
 ////////////////////
 
 
+
+//////////// карусель с текстом
+
+
+// страница с проектами
+// 12
 
