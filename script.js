@@ -175,39 +175,48 @@ function isDesktop() {
 if(document.querySelector('.project_page_desktop')){
   let text_half = document.querySelector('.text_half');
   let img_half = document.querySelector('.img_half');
-  let texts_arr = 
+  let texts_arr = [];
+  let texts = document.getElementsByClassName("text_half__content");
+  for (let i = 0; i < texts.length; i++) {
+    const textItem = texts[i];
+    textItem.id = i;
+    texts_arr.push(textItem);
+  }
+  console.log(texts_arr);
+  
   // [];
+  // console.log(texts_arr);
   // const textBlocks = document.querySelectorAll(".text_half");
   // textBlocks.forEach((block) => {
   //   let content = block.innerHTML;
   //   texts_arr.push(content);
   // })
-  [`<div class="text_half__content text_centre hidden" id="0"><div class="chevron desktop">
-  <img src="./assets/Icons/Back.svg" alt="">
-</div>
-<h2 class="block_heading">Гостиная комната</h2>
-<p class="typing_animation">Давным давно...</p>
-<p>Мы еще пишем историю для это проекта, скоро она появится на сайте!</p><div class="scroll_icon desktop">
-<img src="./assets/Icons/Scroll.svg" alt="" srcset="">
-<img class="scroll_arrow" src="./assets/Icons/Scroll_arrow.svg" alt="" srcset="">
-</div></div>`, `<div class="text_half__content text_centre hidden" id="1"><div class="chevron desktop">
-<img src="./assets/Icons/Back.svg" alt="">
-</div>
-<h2 class="block_heading">Гостиная по индивидуальному дизайн-проекту</h2>
-<p>Мы часто работаем с заказчиками, предоставляющими макеты с собственными дизайн-проектами. Каждый по-своему уникален и требует особого мастерства и подхода, чтобы воплотить замысел автора с максимальной точностью. </p>
-<p>Таким оказался и недавний проект гостиной. Делимся впечатлениями.</p></div>`, `<div class="text_half__content text_centre hidden" id="2"><div class="chevron desktop">
-<img src="./assets/Icons/Back.svg" alt="">
-</div>
-<h2 class="block_heading">Этап 1. Обговорили детали</h2>
-<p>Все работы велись в тесной связке с заказчиком: любые пожелания, подбор материалов, расположение мебели — все с согласия клиента. Обсуждалось всё — вплоть до цветов. Именно они вместе с правильным расположением света и должны были помочь создать желаемую атмосферу уюта и комфорта. </p>
-<h3>Какую цель преследовали?</h3>
-<p>Выполнить гостиную в «ламповом» исполнении: грамотно расставить акценты, подобрать тона, поработать со светом и максимально облегчить пространство, сохранив теплоту и благоустроенность дома.</p></div>`, `<div class="text_half__content text_centre hidden" id="3"><div class="chevron desktop">
-<img src="./assets/Icons/Back.svg" alt="">
-</div>
-<h3 class="block_heading">На каком цвете мебели остановились?</h3>
-<p>Выбрали коричневый, тёплый чёрный цвета — они отлично подчёркивают характер хозяев, наделяют помещение особым шармом. При этом не накапливают негатив и здорово сочетаются с мягкими оттенками стен, потолка и пола.</p>
-<h3 class="block_heading">Из каких материалов решили изготавливать мебель?</h3>
-<p>Панели из высококачественного шпона, эмалированный МДФ — это современные, наиболее износостойкие и неприхотливые материалы: они хорошо переносят перепады температуры, не боятся воды и не трескаются от времени. Да и уход за ними — одно удовольствие.</p></div>`];
+//   [`<div class="text_half__content text_centre hidden" id="0"><div class="chevron desktop">
+//   <img src="./assets/Icons/Back.svg" alt="">
+// </div>
+// <h2 class="block_heading">Гостиная комната</h2>
+// <p class="typing_animation">Давным давно...</p>
+// <p>Мы еще пишем историю для это проекта, скоро она появится на сайте!</p><div class="scroll_icon desktop">
+// <img src="./assets/Icons/Scroll.svg" alt="" srcset="">
+// <img class="scroll_arrow" src="./assets/Icons/Scroll_arrow.svg" alt="" srcset="">
+// </div></div>`, `<div class="text_half__content text_centre hidden" id="1"><div class="chevron desktop">
+// <img src="./assets/Icons/Back.svg" alt="">
+// </div>
+// <h2 class="block_heading">Гостиная по индивидуальному дизайн-проекту</h2>
+// <p>Мы часто работаем с заказчиками, предоставляющими макеты с собственными дизайн-проектами. Каждый по-своему уникален и требует особого мастерства и подхода, чтобы воплотить замысел автора с максимальной точностью. </p>
+// <p>Таким оказался и недавний проект гостиной. Делимся впечатлениями.</p></div>`, `<div class="text_half__content text_centre hidden" id="2"><div class="chevron desktop">
+// <img src="./assets/Icons/Back.svg" alt="">
+// </div>
+// <h2 class="block_heading">Этап 1. Обговорили детали</h2>
+// <p>Все работы велись в тесной связке с заказчиком: любые пожелания, подбор материалов, расположение мебели — все с согласия клиента. Обсуждалось всё — вплоть до цветов. Именно они вместе с правильным расположением света и должны были помочь создать желаемую атмосферу уюта и комфорта. </p>
+// <h3>Какую цель преследовали?</h3>
+// <p>Выполнить гостиную в «ламповом» исполнении: грамотно расставить акценты, подобрать тона, поработать со светом и максимально облегчить пространство, сохранив теплоту и благоустроенность дома.</p></div>`, `<div class="text_half__content text_centre hidden" id="3"><div class="chevron desktop">
+// <img src="./assets/Icons/Back.svg" alt="">
+// </div>
+// <h3 class="block_heading">На каком цвете мебели остановились?</h3>
+// <p>Выбрали коричневый, тёплый чёрный цвета — они отлично подчёркивают характер хозяев, наделяют помещение особым шармом. При этом не накапливают негатив и здорово сочетаются с мягкими оттенками стен, потолка и пола.</p>
+// <h3 class="block_heading">Из каких материалов решили изготавливать мебель?</h3>
+// <p>Панели из высококачественного шпона, эмалированный МДФ — это современные, наиболее износостойкие и неприхотливые материалы: они хорошо переносят перепады температуры, не боятся воды и не трескаются от времени. Да и уход за ними — одно удовольствие.</p></div>`];
   let img_arr = [`<img class="project_img_animation project_img" src="./assets/Images/Cat/1.jpg" alt="">`, `<img class="project_img_animation project_img" src="./assets/Images/Cat/2.jpg" alt="">`, `<img class="zoomIn zoomed project_img" src="./assets/Images/Cat/2.jpg" alt="">`, `<img class="project_img_animation project_img" src="./assets/Images/Cat/3.jpg" alt="">`];
   if(isDesktop()){
     addText(texts_arr, 0);
@@ -264,13 +273,23 @@ if(document.querySelector('.project_page_desktop')){
   }
 
   function findSlide(arr, i){
-    arr.map((item, index)=>{
-        if(i === index){
+    // arr.map((item, index)=>{
+    //     if(i === index){
+    //       if(text_half){
+    //         text_half.innerHTML=item;
+    //       }
+    //     }
+    //   });
+    for (let index = 0; index < arr.length; index++) {
+      const item = arr[index];
+      if(i === index){
           if(text_half){
-            text_half.innerHTML=item;
+            // text_half.innerHTML=item;
+            text_half.innerHTML = '';
+            text_half.appendChild(item);
           }
         }
-      });
+    }
   }
 }
 
